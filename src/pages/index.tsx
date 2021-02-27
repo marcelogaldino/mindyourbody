@@ -16,23 +16,23 @@ import styles from '../styles/pages/Home.module.css'
 interface HomeProps {
   level: number
   currentExperience: number
-  challengesCompleted: number
+  challengesCompleted: number,
+  isMobileView: boolean
 }
 
 export default function Home(props: HomeProps) {
-
-  console.log(props)
 
   return (
     <ChallengesProvider
       level={props.level}
       currentExperience={props.currentExperience}
       challengesCompleted={props.challengesCompleted}
+      isMobileView={props.isMobileView}
     >
 
     <div className={styles.container}>
       <Head>
-        <title>Início | move.it</title>
+        <title>Início | Mind Your Body</title>
       </Head>
       <ExperienceBar />
 
@@ -56,12 +56,19 @@ export default function Home(props: HomeProps) {
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const {level, currentExperience, challengesCompleted} = ctx.req.cookies
+  
+  let isMobileView = (ctx.req
+    ? ctx.req.headers['user-agent']
+    : navigator.userAgent).match(
+      /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
+    )
 
   return {
     props: {
       level: Number(level),
       currentExperience: Number(currentExperience),
-      challengesCompleted: Number(challengesCompleted)
-    }
+      challengesCompleted: Number(challengesCompleted),
+      isMobileView: Boolean(isMobileView)
+    },
   }
 }

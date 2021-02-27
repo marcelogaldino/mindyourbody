@@ -1,6 +1,6 @@
-import Cookies from 'js-cookie'
-
 import { createContext, useState, ReactNode, useEffect } from 'react'
+
+import Cookies from 'js-cookie'
 
 import challenges from '../../challenges.json'
 import { LevelUpModal } from '../components/LevelUpModal'
@@ -10,6 +10,7 @@ interface ChallengesProviderProps {
     level: number
     currentExperience: number
     challengesCompleted: number
+    isMobileView: boolean
 }
 
 interface Challenge {
@@ -43,7 +44,9 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
     const experienceToNextLevel = Math.pow((level + 1) * 4, 2)
 
     useEffect(() => {
-        Notification.requestPermission()
+        if (!rest.isMobileView) {
+            Notification.requestPermission()
+        }
     }, [])
 
     useEffect(() => {
@@ -68,12 +71,14 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
 
         setActiveChallenge(challenge)
 
-        new Audio('./notification.mp3').play()
-
-        if (Notification.permission === 'granted') {
-            new Notification('Novo desafio 🎉🎉', {
-                body: `Valendo ${challenge.amount}xp!`
-            })
+        if (!rest.isMobileView) {
+            new Audio('./notification.mp3').play()
+    
+            if (Notification.permission === 'granted') {
+                new Notification('Novo desafio 🎉🎉', {
+                    body: `Valendo ${challenge.amount} xp!`
+                })
+            }
         }
     }
 
