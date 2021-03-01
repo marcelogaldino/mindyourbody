@@ -7,21 +7,21 @@ Keep your mind and your body health while working from home!
  
 </h4>
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/marcelogaldino/moveit?color=%2304D361">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/marcelogaldino/mindyourbody?color=%2304D361">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/marcelogaldino/moveit">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/marcelogaldino/mindyourbody">
 	
   <a href="https://www.linkedin.com/in/marcelogaldino/">
     <img alt="Made by marcelogaldino" src="https://img.shields.io/badge/made%20by-marcelogaldino-%2304D361">
   </a>
 
-  <a href="https://github.com/marcelogaldino/moveit/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/marcelogaldino/moveit">
+  <a href="https://github.com/marcelogaldino/mindyourbody/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/marcelogaldino/mindyourbody">
   </a>
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
-   <a href="https://github.com/marcelogaldino/moveit/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/marcelogaldino/moveit?style=social">
+   <a href="https://github.com/marcelogaldino/mindyourbody/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/marcelogaldino/mindyourbody?style=social">
   </a>
 </p>
 
@@ -68,7 +68,7 @@ $ git clone https://github.com/marcelogaldino/moveit
 
 ```bash
 # Go into directory web/
-$ cd moveit
+$ cd mindyourbody
 # Install dependencies
 $ npm install
 # Run the server
@@ -79,7 +79,7 @@ $ npm dev
 
 ```bash
 # Go into directory web/
-$ cd moveit
+$ cd mindyourbody
 # Install dependencies
 $ yarn
 # Run the server
